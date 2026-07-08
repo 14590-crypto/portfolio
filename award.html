@@ -6,6 +6,7 @@
 <title>ผลงาน | Portfolio</title>
 
 <style>
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -108,28 +109,7 @@ footer{
     padding:20px;
     color:#666;
 }
-</style>#sakura-container{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:9999;
-}
-
-.petal{
-    position:absolute;
-    top:-60px;
-    border-radius:70% 30% 70% 30%;
-    background:linear-gradient(145deg,#ffd6ea,#ff8fc2);
-    width:18px;
-    height:18px;
-    animation:fall linear forwards;
-}
-
-@keyframes fall{
-    0%{transform:translate(0,-50px) rotate(0deg);}
-    100%{transform:translate(-80px,110vh) rotate(720deg);}
-}
+</style>
 
 </head>
 <body>
@@ -183,31 +163,8 @@ footer{
 <footer>
 © 2026 Portfolio by เอกพจน์ พิยวงษ์
 </footer>
+
 </div>
-
-<div id="sakura-container"></div>
-
-<script>
-const container=document.getElementById("sakura-container");
-
-function createPetal(){
-  const p=document.createElement("div");
-  p.className="petal";
-  const size=Math.random()*18+12;
-
-  p.style.left=Math.random()*100+"vw";
-  p.style.width=size+"px";
-  p.style.height=size+"px";
-  p.style.animationDuration=(Math.random()*6+6)+"s";
-
-  container.appendChild(p);
-
-  setTimeout(()=>p.remove(),12000);
-}
-
-for(let i=0;i<50;i++) createPetal();
-setInterval(createPetal,200);
-</script>
 
 </body>
 </html>
