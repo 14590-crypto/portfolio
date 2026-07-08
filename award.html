@@ -1,83 +1,318 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ผลงาน</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Tahoma,sans-serif;
+background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+width:1200px;
+max-width:95%;
+margin:40px auto;
+background:rgba(255,255,255,.88);
+backdrop-filter:blur(12px);
+padding:35px;
+border-radius:25px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+animation:fadeIn 1s;
+position:relative;
+z-index:2;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+text-align:center;
+font-size:52px;
+background:linear-gradient(45deg,#ff1493,#ff69b4,#ff8fd1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#666;
+margin-bottom:35px;
+font-size:20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.4s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(255,105,180,.45);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+transition:.5s;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+.content{
+padding:18px;
+}
+
+.content h2{
+color:#d63384;
+margin-bottom:10px;
+}
+
+.content p{
+color:#555;
+line-height:1.7;
+}
+
+.back{
+text-align:center;
+margin-top:40px;
+}
+
+.back a{
+text-decoration:none;
+background:linear-gradient(45deg,#ff69b4,#ff1493);
+color:white;
+padding:14px 28px;
+border-radius:12px;
+font-size:18px;
+display:inline-block;
+transition:.3s;
+}
+
+.back a:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(255,20,147,.4);
+}
+
+/* Lightbox */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:85%;
+border-radius:15px;
+box-shadow:0 0 30px white;
+}
+
+.lightbox span{
+position:absolute;
+top:25px;
+right:40px;
+font-size:45px;
+color:white;
+cursor:pointer;
+}
+
+/* Sakura */
+
+.sakura{
+position:fixed;
+top:-20px;
+width:18px;
+height:18px;
+background:#ffb6d9;
+border-radius:70% 0 70% 0;
+pointer-events:none;
+animation:fall linear forwards;
+z-index:1;
+}
+
+@keyframes fall{
+from{
+transform:translateY(-20px) rotate(0deg);
+}
+to{
+transform:translateY(110vh) translateX(120px) rotate(720deg);
+opacity:0;
+}
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:38px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏆 ผลงานของฉัน</h1>
+
+<p class="subtitle">
+กิจกรรม เกียรติบัตร และความภาคภูมิใจ
+</p>
+
 <div class="gallery">
 
-    <div class="card">
-        <img src="images/award1.jpg" alt="ผลงาน 1">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 1</h2>
-            <p>รายละเอียดผลงานที่ 1</p>
-        </div>
-    </div>
+<div class="card">
+<img src="images/award1.jpg" onclick="openImg(this.src)">
+<div class="content">
+<h2>🏅 ผลงานที่ 1</h2>
+<p>รายละเอียดผลงานของคุณ</p>
+</div>
+</div>
 
-    <div class="card">
-        <img src="images/award2.jpg" alt="ผลงาน 2">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 2</h2>
-            <p>รายละเอียดผลงานที่ 2</p>
-        </div>
-    </div>
+<div class="card">
+<img src="images/award2.jpg" onclick="openImg(this.src)">
+<div class="content">
+<h2>🏅 ผลงานที่ 2</h2>
+<p>รายละเอียดผลงานของคุณ</p>
+</div>
+</div>
 
-    <div class="card">
-        <img src="images/award3.jpg" alt="ผลงาน 3">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 3</h2>
-            <p>รายละเอียดผลงานที่ 3</p>
-        </div>
-    </div>
+<div class="card">
+<img src="images/award3.jpg" onclick="openImg(this.src)">
+<div class="content">
+<h2>🏅 ผลงานที่ 3</h2>
+<p>รายละเอียดผลงานของคุณ</p>
+</div>
+</div>
 
-    <div class="card">
-        <img src="images/award4.jpg" alt="ผลงาน 4">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 4</h2>
-            <p>รายละเอียดผลงานที่ 4</p>
-        </div>
-    </div>
+<div class="card">
+<img src="images/award4.jpg" onclick="openImg(this.src)">
+<div class="content">
+<h2>🏅 ผลงานที่ 4</h2>
+<p>รายละเอียดผลงานของคุณ</p>
+</div>
+</div>
 
-    <div class="card">
-        <img src="images/award5.jpg" alt="ผลงาน 5">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 5</h2>
-            <p>รายละเอียดผลงานที่ 5</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="images/award6.jpg" alt="ผลงาน 6">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 6</h2>
-            <p>รายละเอียดผลงานที่ 6</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="images/award7.jpg" alt="ผลงาน 7">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 7</h2>
-            <p>รายละเอียดผลงานที่ 7</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="images/award8.jpg" alt="ผลงาน 8">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 8</h2>
-            <p>รายละเอียดผลงานที่ 8</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="images/award9.jpg" alt="ผลงาน 9">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 9</h2>
-            <p>รายละเอียดผลงานที่ 9</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="images/award10.jpg" alt="ผลงาน 10">
-        <div class="content">
-            <h2>🏆 ผลงานที่ 10</h2>
-            <p>รายละเอียดผลงานที่ 10</p>
-        </div>
-    </div>
+<div class="card">
+<img src="images/award5.jpg" onclick="openImg(this.src)">
+<div class="content">
+<h2>🏅 ผลงานที่ 5</h2>
+<p>รายละเอียดผลงานของคุณ</p>
+</div>
+</div>
 
 </div>
+
+<div class="back">
+<a href="index.html">🏠 กลับหน้าหลัก</a>
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+<span onclick="closeImg()">&times;</span>
+<img id="showImg">
+</div>
+
+<script>
+
+function openImg(src){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("showImg").src=src;
+}
+
+function closeImg(){
+document.getElementById("lightbox").style.display="none";
+}
+
+document.getElementById("lightbox").onclick=function(e){
+if(e.target.id==="lightbox"){
+closeImg();
+}
+}
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="sakura";
+
+petal.style.left=Math.random()*window.innerWidth+"px";
+
+const size=Math.random()*12+10;
+
+petal.style.width=size+"px";
+petal.style.height=size+"px";
+
+petal.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+petal.remove();
+},10000);
+
+}
+
+setInterval(createPetal,250);
+
+</script>
+
+</body>
+</html>
