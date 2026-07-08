@@ -7,77 +7,129 @@
     <title>Portfolio เอกพจน์ พิยวงษ์</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Tahoma, sans-serif;
-            background: linear-gradient(to right, #ffd6f5, #ffeefc);
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .container {
-            width: 800px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        body{
+            font-family:Tahoma,sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);
+            background-size:400% 400%;
+            animation:bgMove 12s ease infinite;
         }
 
-        img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 6px solid #ff66b2;
-            object-fit: cover;
+        @keyframes bgMove{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
         }
 
-        h1 {
-            color: #d63384;
-            margin-top: 20px;
+        .container{
+            width:850px;
+            max-width:90%;
+            background:rgba(255,255,255,.85);
+            backdrop-filter:blur(10px);
+            border-radius:20px;
+            padding:35px;
+            text-align:center;
+            box-shadow:0 15px 40px rgba(0,0,0,.15);
+            animation:fadeIn 1s ease;
         }
 
-        p {
-            font-size: 18px;
-            color: #444;
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
         }
 
-        .menu {
-            margin: 30px 0;
+        img{
+            width:220px;
+            height:220px;
+            border-radius:50%;
+            object-fit:cover;
+            border:6px solid #ff66b2;
+            box-shadow:0 10px 30px rgba(255,102,178,.35);
+            transition:.5s;
         }
 
-        .menu a {
-            text-decoration: none;
-            background: #ff66b2;
-            color: white;
-            padding: 12px 20px;
-            margin: 5px;
-            border-radius: 10px;
-            display: inline-block;
-            transition: 0.3s;
+        img:hover{
+            transform:scale(1.08) rotate(3deg);
+            box-shadow:0 20px 45px rgba(255,102,178,.55);
         }
 
-        .menu a:hover {
-            background: #d63384;
-            transform: scale(1.05);
+        h1{
+            margin-top:20px;
+            font-size:48px;
+            background:linear-gradient(45deg,#ff1493,#ff69b4,#ff8fd1);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
         }
 
-        footer {
-            margin-top: 30px;
-            color: gray;
-            font-size: 14px;
+        h2{
+            margin-top:15px;
+            color:#222;
+        }
+
+        p{
+            margin-top:10px;
+            font-size:18px;
+            color:#555;
+        }
+
+        .menu{
+            margin-top:35px;
+        }
+
+        .menu a{
+            text-decoration:none;
+            background:linear-gradient(45deg,#ff69b4,#ff1493);
+            color:white;
+            padding:14px 22px;
+            margin:8px;
+            border-radius:12px;
+            display:inline-block;
+            font-weight:bold;
+            transition:.35s;
+            box-shadow:0 8px 20px rgba(255,20,147,.3);
+        }
+
+        .menu a:hover{
+            transform:translateY(-6px) scale(1.08);
+            box-shadow:0 15px 30px rgba(255,20,147,.45);
+        }
+
+        footer{
+            margin-top:35px;
+            color:#666;
+            font-size:15px;
         }
     </style>
+
 </head>
 
 <body>
 
     <div class="container">
 
-       <img src="images/IMG_5585.jpeg" alt="รูปโปรไฟล์">
+        <img src="images/IMG_5585.jpeg" alt="รูปโปรไฟล์">
+
         <h1>Portfolio</h1>
+
         <h2>นายเอกพจน์ พิยวงษ์</h2>
 
         <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
+
         <p>โรงเรียนพานทอง</p>
 
         <div class="menu">
@@ -95,5 +147,4 @@
 
 </body>
 
-</html>
 </html>
