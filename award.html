@@ -1,207 +1,172 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ผลงาน</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio เอกพจน์ พิยวงษ์</title>
 
-<style>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        body{
+            font-family:Tahoma,sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            overflow:hidden;
+            background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);
+            background-size:400% 400%;
+            animation:bgMove 12s ease infinite;
+        }
 
-body{
-font-family:Tahoma,sans-serif;
-background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);
-background-size:400% 400%;
-animation:bgMove 12s ease infinite;
-overflow-x:hidden;
-}
+        @keyframes bgMove{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
 
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
+        .container{
+            width:850px;
+            max-width:90%;
+            background:rgba(255,255,255,.85);
+            backdrop-filter:blur(10px);
+            border-radius:20px;
+            padding:35px;
+            text-align:center;
+            box-shadow:0 15px 40px rgba(0,0,0,.15);
+            animation:fadeIn 1s ease;
+            z-index:2;
+        }
 
-.container{
-width:1200px;
-max-width:95%;
-margin:40px auto;
-background:rgba(255,255,255,.88);
-backdrop-filter:blur(12px);
-padding:35px;
-border-radius:25px;
-box-shadow:0 20px 40px rgba(0,0,0,.15);
-animation:fadeIn 1s;
-position:relative;
-z-index:2;
-}
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
 
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+        img{
+            width:220px;
+            height:220px;
+            object-fit:cover;
+            border-radius:50%;
+            border:6px solid #ff66b2;
+            box-shadow:0 10px 30px rgba(255,102,178,.35);
+            transition:.5s;
+        }
 
-h1{
-text-align:center;
-font-size:52px;
-background:linear-gradient(45deg,#ff1493,#ff69b4,#ff8fd1);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:10px;
-}
+        img:hover{
+            transform:scale(1.08) rotate(3deg);
+            box-shadow:0 20px 45px rgba(255,102,178,.55);
+        }
 
-.subtitle{
-text-align:center;
-color:#666;
-margin-bottom:35px;
-font-size:20px;
-}
+        h1{
+            margin-top:20px;
+            font-size:48px;
+            background:linear-gradient(45deg,#ff1493,#ff69b4,#ff8fd1);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            letter-spacing:3px;
+        }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
+        h2{
+            margin-top:15px;
+            color:#222;
+        }
 
-.card{
-background:white;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-transition:.4s;
-cursor:pointer;
-}
+        p{
+            margin-top:10px;
+            font-size:18px;
+            color:#555;
+        }
 
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 40px rgba(255,105,180,.45);
-}
+        .menu{
+            margin-top:35px;
+        }
 
-.card img{
-width:100%;
-height:250px;
-object-fit:cover;
-transition:.5s;
-}
+        .menu a{
+            text-decoration:none;
+            background:linear-gradient(45deg,#ff69b4,#ff1493);
+            color:white;
+            padding:14px 22px;
+            margin:8px;
+            border-radius:12px;
+            display:inline-block;
+            font-weight:bold;
+            transition:.35s;
+            box-shadow:0 8px 20px rgba(255,20,147,.3);
+        }
 
-.card:hover img{
-transform:scale(1.08);
-}
+        .menu a:hover{
+            transform:translateY(-6px) scale(1.08);
+            box-shadow:0 15px 30px rgba(255,20,147,.45);
+        }
 
-.content{
-padding:18px;
-}
+        footer{
+            margin-top:35px;
+            color:#666;
+            font-size:15px;
+        }
 
-.content h2{
-color:#d63384;
-margin-bottom:10px;
-}
+        /* Sakura Effect */
+        .sakura{
+            position:fixed;
+            top:-30px;
+            width:18px;
+            height:18px;
+            background:#ffb6d9;
+            border-radius:70% 0 70% 0;
+            opacity:.8;
+            pointer-events:none;
+            animation:fall linear forwards;
+            z-index:1;
+        }
 
-.content p{
-color:#555;
-line-height:1.7;
-}
+        @keyframes fall{
+            0%{
+                transform:translateY(-30px) rotate(0deg);
+                opacity:1;
+            }
+            100%{
+                transform:translateY(110vh) translateX(120px) rotate(720deg);
+                opacity:0;
+            }
+        }
 
-.back{
-text-align:center;
-margin-top:40px;
-}
+        @media (max-width:768px){
 
-.back a{
-text-decoration:none;
-background:linear-gradient(45deg,#ff69b4,#ff1493);
-color:white;
-padding:14px 28px;
-border-radius:12px;
-font-size:18px;
-display:inline-block;
-transition:.3s;
-}
+            .container{
+                width:95%;
+                padding:25px;
+            }
 
-.back a:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(255,20,147,.4);
-}
+            img{
+                width:180px;
+                height:180px;
+            }
 
-/* Lightbox */
+            h1{
+                font-size:36px;
+            }
 
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.9);
-justify-content:center;
-align-items:center;
-z-index:999;
-}
+            .menu a{
+                display:block;
+                margin:10px auto;
+                width:80%;
+            }
+        }
 
-.lightbox img{
-max-width:90%;
-max-height:85%;
-border-radius:15px;
-box-shadow:0 0 30px white;
-}
-
-.lightbox span{
-position:absolute;
-top:25px;
-right:40px;
-font-size:45px;
-color:white;
-cursor:pointer;
-}
-
-/* Sakura */
-
-.sakura{
-position:fixed;
-top:-20px;
-width:18px;
-height:18px;
-background:#ffb6d9;
-border-radius:70% 0 70% 0;
-pointer-events:none;
-animation:fall linear forwards;
-z-index:1;
-}
-
-@keyframes fall{
-from{
-transform:translateY(-20px) rotate(0deg);
-}
-to{
-transform:translateY(110vh) translateX(120px) rotate(720deg);
-opacity:0;
-}
-}
-
-@media(max-width:768px){
-
-h1{
-font-size:38px;
-}
-
-.gallery{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
+    </style>
 
 </head>
 
@@ -209,108 +174,68 @@ grid-template-columns:1fr;
 
 <div class="container">
 
-<h1>🏆 ผลงานของฉัน</h1>
+    <img src="images/IMG_5585.jpeg" alt="รูปโปรไฟล์">
 
-<p class="subtitle">
-กิจกรรม เกียรติบัตร และความภาคภูมิใจ
-</p>
+    <h1 id="typing"></h1>
 
-<div class="gallery">
+    <h2>นายเอกพจน์ พิยวงษ์</h2>
 
-<div class="card">
-<img src="images/award1.jpg" onclick="openImg(this.src)">
-<div class="content">
-<h2>🏅 ผลงานที่ 1</h2>
-<p>รายละเอียดผลงานของคุณ</p>
-</div>
-</div>
+    <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
 
-<div class="card">
-<img src="images/award2.jpg" onclick="openImg(this.src)">
-<div class="content">
-<h2>🏅 ผลงานที่ 2</h2>
-<p>รายละเอียดผลงานของคุณ</p>
-</div>
-</div>
+    <p>โรงเรียนพานทอง</p>
 
-<div class="card">
-<img src="images/award3.jpg" onclick="openImg(this.src)">
-<div class="content">
-<h2>🏅 ผลงานที่ 3</h2>
-<p>รายละเอียดผลงานของคุณ</p>
-</div>
-</div>
+    <div class="menu">
+        <a href="profile.html">👤 ประวัติส่วนตัว</a>
+        <a href="education.html">🎓 ประวัติการศึกษา</a>
+        <a href="award.html">🏆 ผลงาน</a>
+        <a href="conta.html">📞 ติดต่อ</a>
+    </div>
 
-<div class="card">
-<img src="images/award4.jpg" onclick="openImg(this.src)">
-<div class="content">
-<h2>🏅 ผลงานที่ 4</h2>
-<p>รายละเอียดผลงานของคุณ</p>
-</div>
-</div>
+    <footer>
+        © 2026 Portfolio by เอกพจน์ พิยวงษ์
+    </footer>
 
-<div class="card">
-<img src="images/award5.jpg" onclick="openImg(this.src)">
-<div class="content">
-<h2>🏅 ผลงานที่ 5</h2>
-<p>รายละเอียดผลงานของคุณ</p>
-</div>
-</div>
-
-</div>
-
-<div class="back">
-<a href="index.html">🏠 กลับหน้าหลัก</a>
-</div>
-
-</div>
-
-<div class="lightbox" id="lightbox">
-<span onclick="closeImg()">&times;</span>
-<img id="showImg">
 </div>
 
 <script>
 
-function openImg(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("showImg").src=src;
-}
-
-function closeImg(){
-document.getElementById("lightbox").style.display="none";
-}
-
-document.getElementById("lightbox").onclick=function(e){
-if(e.target.id==="lightbox"){
-closeImg();
-}
-}
-
+// กลีบดอกซากุระ
 function createPetal(){
 
-const petal=document.createElement("div");
+    const petal=document.createElement("div");
+    petal.classList.add("sakura");
 
-petal.className="sakura";
+    petal.style.left=Math.random()*window.innerWidth+"px";
 
-petal.style.left=Math.random()*window.innerWidth+"px";
+    const size=Math.random()*12+10;
+    petal.style.width=size+"px";
+    petal.style.height=size+"px";
 
-const size=Math.random()*12+10;
+    petal.style.animationDuration=(Math.random()*5+6)+"s";
+    petal.style.opacity=Math.random();
 
-petal.style.width=size+"px";
-petal.style.height=size+"px";
+    document.body.appendChild(petal);
 
-petal.style.animationDuration=(Math.random()*5+5)+"s";
-
-document.body.appendChild(petal);
-
-setTimeout(()=>{
-petal.remove();
-},10000);
-
+    setTimeout(()=>{
+        petal.remove();
+    },11000);
 }
 
-setInterval(createPetal,250);
+setInterval(createPetal,300);
+
+// พิมพ์คำว่า Portfolio ทีละตัว
+const text = "Portfolio";
+let index = 0;
+
+function typingEffect() {
+    if (index < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typingEffect, 180);
+    }
+}
+
+typingEffect();
 
 </script>
 
