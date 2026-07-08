@@ -19,6 +19,7 @@
             justify-content:center;
             align-items:center;
             min-height:100vh;
+            overflow:hidden;
             background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);
             background-size:400% 400%;
             animation:bgMove 12s ease infinite;
@@ -40,6 +41,7 @@
             text-align:center;
             box-shadow:0 15px 40px rgba(0,0,0,.15);
             animation:fadeIn 1s ease;
+            z-index:2;
         }
 
         @keyframes fadeIn{
@@ -56,8 +58,8 @@
         img{
             width:220px;
             height:220px;
-            border-radius:50%;
             object-fit:cover;
+            border-radius:50%;
             border:6px solid #ff66b2;
             box-shadow:0 10px 30px rgba(255,102,178,.35);
             transition:.5s;
@@ -114,37 +116,110 @@
             color:#666;
             font-size:15px;
         }
+
+        /* Sakura Effect */
+        .sakura{
+            position:fixed;
+            top:-30px;
+            width:18px;
+            height:18px;
+            background:#ffb6d9;
+            border-radius:70% 0 70% 0;
+            opacity:.8;
+            pointer-events:none;
+            animation:fall linear forwards;
+            z-index:1;
+        }
+
+        @keyframes fall{
+            0%{
+                transform:translateY(-30px) rotate(0deg);
+                opacity:1;
+            }
+            100%{
+                transform:translateY(110vh) translateX(120px) rotate(720deg);
+                opacity:0;
+            }
+        }
+
+        @media (max-width:768px){
+
+            .container{
+                width:95%;
+                padding:25px;
+            }
+
+            img{
+                width:180px;
+                height:180px;
+            }
+
+            h1{
+                font-size:36px;
+            }
+
+            .menu a{
+                display:block;
+                margin:10px auto;
+                width:80%;
+            }
+        }
+
     </style>
 
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <img src="images/IMG_5585.jpeg" alt="รูปโปรไฟล์">
+    <img src="images/IMG_5585.jpeg" alt="รูปโปรไฟล์">
 
-        <h1>Portfolio</h1>
+    <h1>Portfolio</h1>
 
-        <h2>นายเอกพจน์ พิยวงษ์</h2>
+    <h2>นายเอกพจน์ พิยวงษ์</h2>
 
-        <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
+    <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
 
-        <p>โรงเรียนพานทอง</p>
+    <p>โรงเรียนพานทอง</p>
 
-        <div class="menu">
-            <a href="profile.html">👤 ประวัติส่วนตัว</a>
-            <a href="education.html">🎓 ประวัติการศึกษา</a>
-            <a href="award.html">🏆 ผลงาน</a>
-            <a href="conta.html">📞 ติดต่อ</a>
-        </div>
-
-        <footer>
-            © 2026 Portfolio by เอกพจน์ พิยวงษ์
-        </footer>
-
+    <div class="menu">
+        <a href="profile.html">👤 ประวัติส่วนตัว</a>
+        <a href="education.html">🎓 ประวัติการศึกษา</a>
+        <a href="award.html">🏆 ผลงาน</a>
+        <a href="conta.html">📞 ติดต่อ</a>
     </div>
 
-</body>
+    <footer>
+        © 2026 Portfolio by เอกพจน์ พิยวงษ์
+    </footer>
 
+</div>
+
+<script>
+function createPetal(){
+
+    const petal=document.createElement("div");
+    petal.classList.add("sakura");
+
+    petal.style.left=Math.random()*window.innerWidth+"px";
+
+    const size=Math.random()*12+10;
+    petal.style.width=size+"px";
+    petal.style.height=size+"px";
+
+    petal.style.animationDuration=(Math.random()*5+6)+"s";
+    petal.style.opacity=Math.random();
+
+    document.body.appendChild(petal);
+
+    setTimeout(()=>{
+        petal.remove();
+    },11000);
+}
+
+setInterval(createPetal,300);
+</script>
+
+</body>
 </html>
