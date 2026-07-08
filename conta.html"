@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ติดต่อ | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Tahoma,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,.9);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#ff1493;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+p{
+    color:#555;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.contact-box{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    margin:15px 0;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.contact-box:hover{
+    transform:translateY(-5px);
+}
+
+.contact-box h2{
+    color:#ff1493;
+    margin-bottom:10px;
+}
+
+.contact-box a{
+    text-decoration:none;
+    color:#333;
+    font-size:18px;
+    word-break:break-all;
+}
+
+.next{
+    margin-top:35px;
+}
+
+.next a{
+    text-decoration:none;
+    background:linear-gradient(45deg,#ff69b4,#ff1493);
+    color:#fff;
+    padding:14px 30px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.next a:hover{
+    display:inline-block;
+    transform:scale(1.05);
+}
+
+footer{
+    margin-top:30px;
+    color:#666;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>📞 ติดต่อ</h1>
+
+<p>สามารถติดต่อได้ผ่านช่องทางด้านล่าง</p>
+
+<div class="contact-box">
+    <h2>📧 Gmail</h2>
+    <a href="mailto:xri55802@gmail.com">xri55802@gmail.com</a>
+</div>
+
+<div class="contact-box">
+    <h2>📷 Instagram</h2>
+    <a href="https://instagram.com/babysw33t13" target="_blank">
+        @babysw33t13
+    </a>
+</div>
+
+<div class="next">
+    <a href="index.html">🏠 กลับหน้าหลัก</a>
+</div>
+
+<footer>
+© 2026 Portfolio by เอกพจน์ พิยวงษ์
+</footer>
+
+</div>
+
+</body>
+</html>
