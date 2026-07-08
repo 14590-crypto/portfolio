@@ -6,7 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio เอกพจน์ พิยวงษ์</title>
 
-    <style>.cat{
+    <style>.cat-box{
+    position:fixed;
+    bottom:25px;
+    left:-150px;
+    z-index:5;
+    animation:catWalk 15s linear infinite;
+}
+
+.cat{
+    width:100px;
+    filter:drop-shadow(0 12px 8px rgba(0,0,0,.35));
+}
+
+.shadow{
+    position:absolute;
+    bottom:-5px;
+    left:20px;
+    width:70px;
+    height:15px;
+    background:rgba(0,0,0,.25);
+    border-radius:50%;
+    filter:blur(5px);
+}
+
+@keyframes catWalk{
+
+    0%{
+        left:-150px;
+    }
+
+    50%{
+        left:50%;
+    }
+
+    100%{
+        left:110%;
+    }
+
+}.cat{
     position:fixed;
     bottom:20px;
     left:-100px;
