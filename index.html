@@ -1,299 +1,50 @@
-<!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="th">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio เอกพจน์ พิยวงษ์</title>
-
-    <style>.cat-box{
-    position:fixed;
-    bottom:25px;
-    left:-150px;
-    z-index:5;
-    animation:catWalk 15s linear infinite;
-}
-
-.cat{
-    width:100px;
-    filter:drop-shadow(0 12px 8px rgba(0,0,0,.35));
-}
-
-.shadow{
-    position:absolute;
-    bottom:-5px;
-    left:20px;
-    width:70px;
-    height:15px;
-    background:rgba(0,0,0,.25);
-    border-radius:50%;
-    filter:blur(5px);
-}
-
-@keyframes catWalk{
-
-    0%{
-        left:-150px;
-    }
-
-    50%{
-        left:50%;
-    }
-
-    100%{
-        left:110%;
-    }
-
-}.cat{
-    position:fixed;
-    bottom:20px;
-    left:-100px;
-    font-size:70px;
-    animation:walkCat 12s linear infinite;
-    z-index:3;
-}
-
-
-@keyframes walkCat{
-
-    0%{
-        left:-100px;
-        transform:scaleX(1);
-    }
-
-    45%{
-        left:45%;
-        transform:scaleX(1);
-    }
-
-    50%{
-        left:50%;
-        transform:scaleX(-1);
-    }
-
-    95%{
-        left:110%;
-        transform:scaleX(-1);
-    }
-
-    100%{
-        left:110%;
-    }
-
-}
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            font-family:Tahoma,sans-serif;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            min-height:100vh;
-            overflow:hidden;
-            background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);
-            background-size:400% 400%;
-            animation:bgMove 12s ease infinite;
-        }
-
-        @keyframes bgMove{
-            0%{background-position:0% 50%;}
-            50%{background-position:100% 50%;}
-            100%{background-position:0% 50%;}
-        }
-
-        .container{
-            width:850px;
-            max-width:90%;
-            background:rgba(255,255,255,.85);
-            backdrop-filter:blur(10px);
-            border-radius:20px;
-            padding:35px;
-            text-align:center;
-            box-shadow:0 15px 40px rgba(0,0,0,.15);
-            animation:fadeIn 1s ease;
-            z-index:2;
-        }
-
-        @keyframes fadeIn{
-            from{
-                opacity:0;
-                transform:translateY(30px);
-            }
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-        }
-
-        img{
-            width:220px;
-            height:220px;
-            object-fit:cover;
-            border-radius:50%;
-            border:6px solid #ff66b2;
-            box-shadow:0 10px 30px rgba(255,102,178,.35);
-            transition:.5s;
-        }
-
-        img:hover{
-            transform:scale(1.08) rotate(3deg);
-            box-shadow:0 20px 45px rgba(255,102,178,.55);
-        }
-
-        h1{
-            margin-top:20px;
-            font-size:48px;
-            background:linear-gradient(45deg,#ff1493,#ff69b4,#ff8fd1);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
-        }
-
-        h2{
-            margin-top:15px;
-            color:#222;
-        }
-
-        p{
-            margin-top:10px;
-            font-size:18px;
-            color:#555;
-        }
-
-        .menu{
-            margin-top:35px;
-        }
-
-        .menu a{
-            text-decoration:none;
-            background:linear-gradient(45deg,#ff69b4,#ff1493);
-            color:white;
-            padding:14px 22px;
-            margin:8px;
-            border-radius:12px;
-            display:inline-block;
-            font-weight:bold;
-            transition:.35s;
-            box-shadow:0 8px 20px rgba(255,20,147,.3);
-        }
-
-        .menu a:hover{
-            transform:translateY(-6px) scale(1.08);
-            box-shadow:0 15px 30px rgba(255,20,147,.45);
-        }
-
-        footer{
-            margin-top:35px;
-            color:#666;
-            font-size:15px;
-        }
-
-        /* Sakura Effect */
-        .sakura{
-            position:fixed;
-            top:-30px;
-            width:18px;
-            height:18px;
-            background:#ffb6d9;
-            border-radius:70% 0 70% 0;
-            opacity:.8;
-            pointer-events:none;
-            animation:fall linear forwards;
-            z-index:1;
-        }
-
-        @keyframes fall{
-            0%{
-                transform:translateY(-30px) rotate(0deg);
-                opacity:1;
-            }
-            100%{
-                transform:translateY(110vh) translateX(120px) rotate(720deg);
-                opacity:0;
-            }
-        }
-
-        @media (max-width:768px){
-
-            .container{
-                width:95%;
-                padding:25px;
-            }
-
-            img{
-                width:180px;
-                height:180px;
-            }
-
-            h1{
-                font-size:36px;
-            }
-
-            .menu a{
-                display:block;
-                margin:10px auto;
-                width:80%;
-            }
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio เอกพจน์ พิยวงษ์</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',Tahoma,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;overflow:hidden;
+background:linear-gradient(-45deg,#ffd6f5,#ffeefc,#ffc9e8,#ffe4f7);background-size:400% 400%;animation:bg 12s ease infinite}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+body:before{content:"";position:fixed;right:80px;top:60px;width:170px;height:170px;border-radius:50%;background:#ff6666;opacity:.25}
+body:after{content:"";position:fixed;left:0;bottom:0;width:100%;height:240px;background:linear-gradient(#eef5ff,#cfdcff);clip-path:polygon(0 100%,20% 100%,35% 45%,50% 100%,65% 35%,80% 100%,100% 100%);opacity:.5}
+.container{position:relative;z-index:2;width:850px;max-width:90%;padding:35px;text-align:center;background:rgba(255,255,255,.55);backdrop-filter:blur(18px);border-radius:24px;box-shadow:0 15px 40px rgba(0,0,0,.15)}
+img{width:220px;height:220px;border-radius:50%;object-fit:cover;border:6px solid #ff66b2}
+h1{margin:15px 0;font-size:54px;background:linear-gradient(90deg,#ff5f9e,#ffb6d9,#ff5f9e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.jp{color:#d14b8f;letter-spacing:3px;margin-bottom:10px}
+.menu a{text-decoration:none;display:inline-block;margin:8px;padding:14px 22px;border-radius:12px;color:#fff;background:linear-gradient(45deg,#ff8fc6,#ff5f9e)}
+.sakura{position:fixed;top:-20px;background:#ffb6d9;width:14px;height:14px;border-radius:70% 0 70% 0;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) translateX(120px) rotate(720deg);opacity:0}}
+.lantern{position:fixed;top:15px;font-size:60px;animation:swing 3s ease-in-out infinite}.left{left:25px}.right{right:25px}
+@keyframes swing{50%{transform:rotate(8deg)}}
+.cat{position:fixed;bottom:20px;left:-100px;font-size:70px;animation:walk 12s linear infinite}
+@keyframes walk{0%{left:-100px;transform:scaleX(1)}49%{transform:scaleX(1)}50%{transform:scaleX(-1);left:50%}100%{left:110%;transform:scaleX(-1)}}
+</style>
 </head>
-
 <body>
-
+<div class="lantern left">🏮</div><div class="lantern right">🏮</div>
 <div class="container">
-   <img src="images/IMG_5586 (1).jpeg">
-
-    <h1>Portfolio</h1>
-
-    <h2>นายเอกพจน์ พิยวงษ์</h2>
-
-    <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
-
-    <p>โรงเรียนพานทอง</p>
-
-    <div class="menu">
-        <a href="profile.html">👤 ประวัติส่วนตัว</a>
-        <a href="education.html">🎓 ประวัติการศึกษา</a>
-        <a href="award.html">🏆 ผลงาน</a>
-        <a href="contact.html">📞 ติดต่อ</a>
-    </div>
-
-    <footer>
-        © 2026 Portfolio by เอกพจน์ พิยวงษ์
-    </footer>
-
+<img src="images/IMG_5586 (1).jpeg" alt="">
+<h1>Portfolio</h1>
+<p class="jp">ようこそ • Welcome • ようこそ</p>
+<h2>นายเอกพจน์ พิยวงษ์</h2>
+<p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
+<p>โรงเรียนพานทอง</p>
+<div class="menu">
+<a href="profile.html">👤 ประวัติส่วนตัว</a>
+<a href="education.html">🎓 ประวัติการศึกษา</a>
+<a href="award.html">🏆 ผลงาน</a>
+<a href="contact.html">📞 ติดต่อ</a>
 </div>
-
-<script>
-function createPetal(){
-
-    const petal=document.createElement("div");
-    petal.classList.add("sakura");
-
-    petal.style.left=Math.random()*window.innerWidth+"px";
-
-    const size=Math.random()*12+10;
-    petal.style.width=size+"px";
-    petal.style.height=size+"px";
-
-    petal.style.animationDuration=(Math.random()*5+6)+"s";
-    petal.style.opacity=Math.random();
-
-    document.body.appendChild(petal);
-
-    setTimeout(()=>{
-        petal.remove();
-    },11000);
-}
-
-setInterval(createPetal,300);
-</script>
-
+<footer style="margin-top:30px">© 2026 Portfolio by เอกพจน์ พิยวงษ์</footer>
+</div>
 <div class="cat">🐱</div>
-</body>
-</html>
+<script>
+function petal(){const p=document.createElement('div');p.className='sakura';p.style.left=Math.random()*innerWidth+'px';let s=10+Math.random()*12;p.style.width=s+'px';p.style.height=s+'px';p.style.animationDuration=(6+Math.random()*5)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),11000)}
+setInterval(petal,250);
+</script>
+</body></html
